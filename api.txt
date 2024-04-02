@@ -1,0 +1,24 @@
+--- Создание сущностей ---
+1) Создание экземпляра Car
+POST: /api/car { buildDate: Date, ownerId: number } / {buildDate: Date}
+2) Создание экземпляра Customer
+POST: /api/customer { fio: string, phoneNumber: string, email: string, dealerId: number } / {fio: string, phoneNumber: string, email: string, dealerId: number }
+3) Создание экземпляра Dealer
+POST: /api/dealer { name: string, email: string, agentFIO: string }
+
+--- Добавление ---
+4) Назначить машину владельцу 
+PUT: /api/car/{carId} { ownerId: number }
+5) Назначить клиента дилеру
+PUT: /api/customer/{customerId} { dealerId: number }
+
+--- Удаление --- 
+6) Удалить машину у владельца
+DELETE: /api/car/{carId} 
+7) Удалить владельца у дилера
+DELETE: /api/customer/{customerId}
+
+--- Получение ---
+8) Получить информацию о дилере 
+
+

@@ -1,11 +1,8 @@
 package com.pegasAgro.carPark.services;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.aspectj.asm.internal.CharOperation;
-import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import com.pegasAgro.carPark.dto.carDTO.CarDTO;

@@ -10,3 +10,10 @@ spring:
     properties:
       hibernate.format_sql: true
       hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    multipart:
+      max-file-size: 128KB
+      max-request-size: 128KB
+  http:
+    multipart:
+      enabled: true

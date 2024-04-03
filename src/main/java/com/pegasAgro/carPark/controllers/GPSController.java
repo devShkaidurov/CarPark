@@ -21,6 +21,6 @@ public class GPSController {
 
     @PostMapping
     public ResponseEntity<?> calculateGPS (@RequestParam("file") MultipartFile file) throws IOException {
-        return new ResponseEntity<>(gpsService.calculateDistance(file) + " m.", HttpStatus.OK);
+        return new ResponseEntity<>(gpsService.calculateDistance(file) + " meters", HttpStatus.OK);
     }
 }

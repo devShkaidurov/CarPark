@@ -35,5 +35,6 @@ public class Dealer {
     @OneToMany(mappedBy = "dealer", 
         fetch = FetchType.LAZY,
         cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Customer> customers;
 }

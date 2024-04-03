@@ -3,6 +3,7 @@ package com.pegasAgro.carPark.models;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -40,11 +41,13 @@ public class Customer {
     @OneToMany(mappedBy = "customer", 
         fetch = FetchType.LAZY,
         cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Car> cars;
 
     @ManyToOne(fetch = FetchType.EAGER,
         cascade = CascadeType.MERGE)
     @JoinColumn(name = "dealer_id",
             foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
+    @JsonManagedReference
     private Dealer dealer;
 }

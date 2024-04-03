@@ -16,7 +16,7 @@ import lombok.Data;
 import java.util.Date;
 import java.util.UUID;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "cars", schema = "public")
@@ -33,6 +33,7 @@ public class Car {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "customer_id",
         foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
+    @JsonManagedReference
     private Customer customer;
 
 }
